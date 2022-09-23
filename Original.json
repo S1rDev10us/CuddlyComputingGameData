@@ -1,7 +1,8 @@
 {
 	"version":{
 		"name":"Original",
-		"version":"1.0.0"
+		"version":"1.0.0",
+		"author":"S1rDev10us, Wojiee, WoodenBox12, ARealHuman"
 	},
 	"roguelike": false,
 	"messages": {

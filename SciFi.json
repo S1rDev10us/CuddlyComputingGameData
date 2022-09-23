@@ -1,0 +1,114 @@
+{
+	"version":{
+		"name":"Sci-Fi Game",
+		"version":"0.1",
+		"author":"S1rDev10us",
+		"link":"https://S1rDev10us.github.io/GameDev"
+	},
+	"roguelike": true,
+	"messages": {
+		"death": [
+			"Error found, death source reported to ADMIN#02",
+			"Terminal error occured, bootable file realLife.conscience not found"
+		],
+		"retire": [
+			"Your trial of LIFE simulator has ended.\nIngame time: %s years\nReal time: ~0.501s"
+		],
+		"win": [
+			"Error found, win condition not enabled, closing copy of game"
+		],
+		"start": [
+			"Booting up Sci-B0rg OS",
+			"Sci-B0rg OS loaded, have a wonderful day!",
+			"Error 404, potentially relevant file realLife.conscience not found, terminal error may occur on game exit",
+			"File has missing data, potential pirate copy found. Reporting to relevant authorities"
+		],
+		"welcome": [
+			"You gaze upon the sprawling metropolis of %s and sigh, ready to re-enter society"
+		],
+		"debt": [
+			"You narrowly escape indentureship at the hands of The Corporation due to your debts"
+		]
+	},
+	"events": {
+		"places": [
+			{
+				"name":"New London"
+			},
+			{
+				"name":"moon base Alpha"
+			}
+		],
+		"events": [
+			{
+				"id":"lond-guild-thieves",
+				"place":0,
+				"text":"You see a shady guy dissapear into a building which you recognize as being owned by the theives guild",
+				"predicate":[
+					{
+						"not":{
+							"complete":"guild-chosen"
+						}
+					},
+					{
+						"not":{
+							"complete":"guild-theives-reject"
+						}
+					}
+				],
+				"outcomes":[
+					{
+						"name":"Enter and attempt to join the guild"
+					},
+					{
+						"name":"Report the building to the local authorities",
+						"complete":[
+							"guild-theives-reject",
+							"guild-theives-anger"
+						]
+					},
+					{
+						"name":"Leave like you never saw anything",
+						"output":"You feel like you are being watched but leave without issue",
+						"complete":"guild-theives-reject"
+					}
+				]
+			}
+		],
+		"shops": [
+
+		]
+	},
+	"shorthands": {
+
+	},
+	"weapons": [
+
+	],
+	"items": [
+
+	],
+	"accessories": [
+
+	],
+	"predicates": {
+
+	},
+	"start": {
+		"items": [
+
+		],
+		"weapons": [
+
+		],
+		"accessories": [
+
+		],
+		"pets": [
+
+		]
+	},
+	"complete": [
+
+	]
+}
