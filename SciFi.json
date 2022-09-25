@@ -1,9 +1,9 @@
 {
-	"version":{
-		"name":"Sci-Fi Game",
-		"version":"0.1",
-		"author":"S1rDev10us",
-		"link":"https://S1rDev10us.github.io/GameDev"
+	"version": {
+		"name": "Sci-Fi Game",
+		"version": "0.1",
+		"author": "S1rDev10us",
+		"link": "https://S1rDev10us.github.io/GameDev"
 	},
 	"roguelike": true,
 	"messages": {
@@ -33,82 +33,60 @@
 	"events": {
 		"places": [
 			{
-				"name":"New London"
-			},
-			{
-				"name":"moon base Alpha"
-			}
-		],
-		"events": [
-			{
-				"id":"lond-guild-thieves",
-				"place":0,
-				"text":"You see a shady guy dissapear into a building which you recognize as being owned by the theives guild",
-				"predicate":[
+				"name": "New London",
+				"events": [
 					{
-						"not":{
-							"complete":"guild-chosen"
-						}
-					},
-					{
-						"not":{
-							"complete":"guild-theives-reject"
-						}
-					}
-				],
-				"outcomes":[
-					{
-						"name":"Enter and attempt to join the guild"
-					},
-					{
-						"name":"Report the building to the local authorities",
-						"complete":[
-							"guild-theives-reject",
-							"guild-theives-anger"
+						"id": "lond-guild-thieves",
+						"place": 1,
+						"text": "You see a shady guy dissapear into a building which you recognize as being owned by the theives guild",
+						"predicate": [
+							{
+								"not": {
+									"complete": "guild-chosen"
+								}
+							},
+							{
+								"not": {
+									"complete": "guild-theives-reject"
+								}
+							}
+						],
+						"outcomes": [
+							{
+								"name": "Enter and attempt to join the guild"
+							},
+							{
+								"name": "Report the building to the local authorities",
+								"complete": [
+									"guild-theives-reject",
+									"guild-theives-anger"
+								]
+							},
+							{
+								"name": "Leave like you never saw anything",
+								"output": "You feel like you are being watched but leave without issue",
+								"complete": "guild-theives-reject"
+							}
 						]
-					},
-					{
-						"name":"Leave like you never saw anything",
-						"output":"You feel like you are being watched but leave without issue",
-						"complete":"guild-theives-reject"
 					}
 				]
+			},
+			{
+				"name": "moon base Alpha"
 			}
 		],
-		"shops": [
-
-		]
+		"shops": []
 	},
-	"shorthands": {
-
-	},
-	"weapons": [
-
-	],
-	"items": [
-
-	],
-	"accessories": [
-
-	],
-	"predicates": {
-
-	},
+	"shorthands": {},
+	"weapons": [],
+	"items": [],
+	"accessories": [],
+	"predicates": {},
 	"start": {
-		"items": [
-
-		],
-		"weapons": [
-
-		],
-		"accessories": [
-
-		],
-		"pets": [
-
-		]
+		"items": [],
+		"weapons": [],
+		"accessories": [],
+		"pets": []
 	},
-	"complete": [
-
-	]
+	"complete": []
 }
