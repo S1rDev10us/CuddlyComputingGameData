@@ -57,10 +57,30 @@
 							},
 							{
 								"name": "Report the building to the local authorities",
-								"complete": [
-									"guild-theives-reject",
-									"guild-theives-anger"
-								]
+								"output": {
+									"predicate": {
+										"rep": {
+											"greater": true,
+											"rep": 0
+										}
+									},
+									"true": {
+										"output": "You are rewarded by the authorities but feel as if it could cause you trouble in the future",
+										"gold": 100,
+										"complete": [
+											"guild-theives-reject",
+											"guild-theives-anger"
+										]
+									},
+									"false": {
+										"output": "The authorities do not believe your tale but the theives are outraged regardles",
+										"complete": [
+											"guild-theives-reject",
+											"guild-theives-anger",
+											"guild-theives-anger-fail"
+										]
+									}
+								}
 							},
 							{
 								"name": "Leave like you never saw anything",
@@ -75,7 +95,7 @@
 				"name": "moon base Alpha"
 			}
 		],
-		"shops": []
+		"shops": {}
 	},
 	"shorthands": {},
 	"weapons": [],
