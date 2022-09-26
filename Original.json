@@ -5,6 +5,7 @@
 		"author": "S1rDev10us, Wojiee, WoodenBox12, ARealHuman"
 	},
 	"roguelike": false,
+	"forceSave":true,
 	"messages": {
 		"death": [
 			"Your soul fades away into nothing, never to be seen again...",
