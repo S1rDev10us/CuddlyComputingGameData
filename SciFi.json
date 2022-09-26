@@ -5,7 +5,8 @@
 		"author": "S1rDev10us",
 		"link": "https://S1rDev10us.github.io/GameDev"
 	},
-	"roguelike": true,
+	"roguelike": false,
+	"forceSave":true,
 	"messages": {
 		"death": [
 			"Error found, death source reported to ADMIN#02",
@@ -37,8 +38,7 @@
 				"events": [
 					{
 						"id": "lond-guild-thieves",
-						"place": 1,
-						"text": "You see a shady guy dissapear into a building which you recognize as being owned by the theives guild",
+						"text": "You see a shady guy dissapear into a building which you recognize as being owned by the thieves guild",
 						"predicate": [
 							{
 								"not": {
@@ -47,13 +47,36 @@
 							},
 							{
 								"not": {
-									"complete": "guild-theives-reject"
+									"complete": "guild-thieves-reject"
 								}
 							}
 						],
 						"outcomes": [
 							{
-								"name": "Enter and attempt to join the guild"
+								"name": "Enter and attempt to join the guild",
+								"output":{
+									"predicate":{
+										"gold":{
+											"gold":250,
+											"greater":true
+										}
+									},
+									"true":{
+										"output":"They invite you in, requesting a small fee which you gladly pay. You are then indoctrinated into the guild and become a novice thief",
+										"gold":-250,
+										"rep":-5,
+										"complete":[
+											"guild-chosen",
+											"guild-thieves-chosen",
+											"guild-theives-novice"
+										]
+									},
+									"false":{
+										"output":"They invite you in but force you out with knives when they realise you are unable to pay the fee",
+										"complete":"guild-thieves-reject",
+										"rep":-2
+									}
+								}
 							},
 							{
 								"name": "Report the building to the local authorities",
@@ -68,16 +91,16 @@
 										"output": "You are rewarded by the authorities but feel as if it could cause you trouble in the future",
 										"gold": 100,
 										"complete": [
-											"guild-theives-reject",
-											"guild-theives-anger"
+											"guild-thieves-reject",
+											"guild-thieves-anger"
 										]
 									},
 									"false": {
-										"output": "The authorities do not believe your tale but the theives are outraged regardles",
+										"output": "The authorities do not believe your tale but the thieves are outraged regardless",
 										"complete": [
-											"guild-theives-reject",
-											"guild-theives-anger",
-											"guild-theives-anger-fail"
+											"guild-thieves-reject",
+											"guild-thieves-anger",
+											"guild-thieves-anger-fail"
 										]
 									}
 								}
@@ -85,7 +108,7 @@
 							{
 								"name": "Leave like you never saw anything",
 								"output": "You feel like you are being watched but leave without issue",
-								"complete": "guild-theives-reject"
+								"complete": "guild-thieves-reject"
 							}
 						]
 					}
