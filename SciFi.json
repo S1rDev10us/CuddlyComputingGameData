@@ -13,7 +13,7 @@
 			"Terminal error occured, bootable file realLife.conscience not found"
 		],
 		"retire": [
-			"Your trial of LIFE simulator has ended.\nIngame time: %s years\nReal time: ~0.501s"
+			"Your trial of LIFE simulator has ended.\nIngame time: %s years\nReal time: ~0.0501s"
 		],
 		"win": [
 			"Error found, win condition not enabled, closing copy of game"
